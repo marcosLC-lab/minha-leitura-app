@@ -13,8 +13,8 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Build whith official kivy Docker image
-        run: 
-          docker run --rm -v "$(pwd)":/home/user/hostcwd kivy/buildozer android debug
+        run: |
+          yes | docker run --rm -v "$(pwd)":/home/user/hostcwd kivy/buildozer android debug
 
       - name: Upload artifacts
         uses: actions/upload-artifact@v4
